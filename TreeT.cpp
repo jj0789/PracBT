@@ -49,14 +49,14 @@ void TreeT<T>::Add(T value) {
     while (curr != nullptr){
         if (curr->value > value) {
             if (curr->left == nullptr){
-                curr-left = node;
+                curr->left = node;
                 break;
             }
             curr = curr->left;
         }
         else if (curr->value < value) {
             if (curr->right == nullptr){
-                curr-right = node;
+                curr->right = node;
                 break;
             }
             curr = curr->right;
@@ -72,7 +72,7 @@ void TreeT<T>::Add(T value) {
 
 template<class T>
 void TreeT<T>::Remove(T value) {
-    RemoveHelper(root, value)
+    RemoveHelper(root, value);
 
 }
 
@@ -112,7 +112,7 @@ void TreeT<T>::ResetIterator(Order traverseOrder) {
         PlacePreOrder(root);
     }
 
-    else (traverseOrder == POST_ORDER){
+    else {
         PlacePostOrder(root);
     }
 }
