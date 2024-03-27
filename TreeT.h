@@ -19,6 +19,8 @@ public:
     TreeT();
     ~TreeT();
 
+    TreeT(const TreeT& otherTree);
+
     TreeT& operator=(const TreeT& otherTree);
 
     void Add(T value);       // Add value to the tree
@@ -49,6 +51,7 @@ private:
     void DeleteNode(Node*& subtree);
     void GetPredecessor(Node* curr, T& value);
 
+    void copyOther(const TreeT& otherTree);
     void CopyHelper(Node*& thisTree, Node* otherTree);
 
     // Used for iterator
